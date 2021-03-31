@@ -1,0 +1,4 @@
+P1 H(R1,R3,R5)R(R2)
+P2 H(R6) R(R5)
+P3 H() R(R1)
+P4 H(R4) R(R1)
