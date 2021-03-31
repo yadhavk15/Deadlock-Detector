@@ -1,7 +1,7 @@
 # Deadlock-Detector
 A C program to detect potential deadlocks in a computer system using Depth-First Search algorithm to traverse the graph created from the process-resource allocation adjacency list.
 
-#Problem Definition
+# Problem Definition
 In an operating system, a deadlock happens when a process enters a waiting state because a requested system resource is held by another waiting process, which in turn is waiting for another resource held by another waiting process. 
 
 The program needs to  identify which process if any would be deadlocked process from a file which contains the processes and resources so as to simulate a resource allocation table found in Linux.
@@ -14,19 +14,19 @@ The program needs to  identify which process if any would be deadlocked process 
 | P4  | H(R4)   | R(R1)  |
 
 
-#Solution Definition
+# Solution Definition
 
-##Struct node
+## Struct node
 - It contains the name of the vertex, the vertex_number which is its index in the array of vertices.
 - visit_flag which indicates if the node has been visited during graph traversal 
 - *next which is a pointer to the next node in its adjacency list.
 
-##new_edge(node *vertex, int vertex_number, char **names)
+## new_edge(node *vertex, int vertex_number, char **names)
 - It creates an edge between the vertex(1st parameter) and another vertex specified by its vertex_number(2nd parameter).
 - The new_node created in the function using the vertex_number is added to the front of the adjacency list of the vertex. 
 - Array names contain all the names of the vertices in the graph.
 
-##deadlock(node *graph, int no_processes, int no_vertices)
+## deadlock(node *graph, int no_processes, int no_vertices)
 ###Modified  Depth-first search algorithm where :
 1. we start from a vertex(starting vertex) in the graph, mark it as visited.
 2. move to the next vertex(x) in its adjacency list, mark it as visited.
@@ -41,7 +41,7 @@ The program needs to  identify which process if any would be deadlocked process 
 12. The visit flag is reset after each traversal of a  process vertex in the graph array.
 13. After the for loop stops, the deadlocked processes if any are printed before exiting the function.
 
-##int main()
+## int main()
 1. It reads the process file, separates each process record by a “:” and does not store the process characters(P1,P2…) for easier string manipulation, and counts the number of processes.
 2. The number of processes, resources in the file are stored in the variables no_ processes and no_resources respectively.
 3. The names of the respective processes and resources are then included in the names array. 
